@@ -9,9 +9,18 @@ clrscr();
 scanf("%s",&a);
 n=strlen(a)-1;
 for(i=n;i>=0;i--){
-if(a[n-i]!=a[i]){ans=1;}
+if(a[n-i]!=a[i])
+  {
+    ans=1;  
+  }
 }
-if(ans==1){printf("not palindrome");}
-else{printf("palindrome");}
+if(ans==1)
+{
+  printf("not palindrome");
+}
+else
+{
+  printf("palindrome");
+}
 getch();
 }
