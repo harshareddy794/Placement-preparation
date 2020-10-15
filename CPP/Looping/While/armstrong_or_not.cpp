@@ -1,3 +1,4 @@
+
 #include <iostream>
 
 #include <cmath>
@@ -13,6 +14,8 @@ int main()
    
 int number,orginal_number,new_number=0,rem;
    
+cout<<"Enter a 3 digit number";
+
 cin>>number;
    
 orginal_number=number;
