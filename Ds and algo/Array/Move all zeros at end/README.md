@@ -3,10 +3,11 @@
 [method 1](./method1.cpp)
 
 ```
-(Good method)
+Time complexity -> (n^2)
+```
 
-Time complexity -> (n * d)
+[method 2](./method2.cpp)
 
-Auxiliary memory -> (1)
-
+```
+Time complexity -> (n)
 ```
