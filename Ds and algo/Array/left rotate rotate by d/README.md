@@ -10,3 +10,18 @@ Time complexity -> (n * d)
 Auxiliary memory -> (1)
 
 ```
+
+[method 2](./method2.cpp)
+
+```
+(Good method)
+
+Time complexity -> (n)
+
+Auxiliary memory -> (d)
+
+```
+
+```
+Best method to be added
+```
