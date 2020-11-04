@@ -9,15 +9,11 @@ void swap(int arr[],  int low,int high){
 }
 
 void moveZeros(int arr[], int n){
-	int i,j;
+	int count=0,i;
 	for(i=0;i<n;i++){
-		if(arr[i]==0){
-			for(j=i+1;j<n;j++){
-				if(arr[j]!=0){
-					swap(arr,i,j);
-					
-				}
-			}
+		if(arr[i]!=0){
+			swap(arr,i,count);
+			count++;
 		}
 	}
 }
@@ -36,7 +32,6 @@ for(i=0;i<n;i++)
 }
 
 
-// Time complexity  -> (n^2)
+// Time complexity  -> (n)
 // 
-
 
