@@ -2,12 +2,6 @@
 
 using namespace std;
 
-void swap(int arr[], int x, int y){
-    int temp = arr[x];
-    arr[x] = arr[y];
-    arr[y] = temp;
-}
-
 void isSorted(int arr[], int n)
 {   int i, sorted = 1;
     for(i=1; i<n; i++){
