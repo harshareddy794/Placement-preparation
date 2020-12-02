@@ -11,12 +11,12 @@ struct Node{
     }
 };
 
-int printListRecursive( Node *head ){
+void printListRecursive( Node *head ){
     if(head!=NULL){
         cout<<(head->data)<<" ";
         printListRecursive(head->next);
     }else{
-        return 0;
+        return;
     }
 }
 
