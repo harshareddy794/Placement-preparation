@@ -37,6 +37,24 @@ Node *insertAtPosition(Node *head, int x,int position){
     }
 }
 
+// Naive solution
+void middleNodeNaive(Node *head){
+    int length,i;
+    Node *curr = head;
+    while(curr!=NULL){
+        curr = curr->next;
+        length++;
+    }
+    curr = head;
+    i=0;
+    while(i<length/2){
+        curr = curr->next;
+        i++;
+    }
+    cout<<endl;
+    cout<<curr->data;
+}
+
 // Eficient solution
 void middleNode(Node *head){
     Node *curr = head;
@@ -50,8 +68,6 @@ void middleNode(Node *head){
     cout<<slow->data;
 }
 
-
-
 int main()
 {   Node *head =NULL;
     head = insertAtPosition(head,10,1);
@@ -62,5 +78,6 @@ int main()
     head = insertAtPosition(head,50,1);
     printList(head);
     middleNode(head);
+    middleNodeNaive(head);
    return 0;
 }
