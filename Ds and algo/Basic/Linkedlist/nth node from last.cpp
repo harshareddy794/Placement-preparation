@@ -37,6 +37,7 @@ Node *insertAtPosition(Node *head, int x,int position){
     }
 }
 
+
 // Naive solution
 void NthFromEndNaive(Node *head, int n){
     int length=0,i;
@@ -45,6 +46,7 @@ void NthFromEndNaive(Node *head, int n){
         curr = curr->next;
         length++;
     }
+    cout<<"Length "<<length;
     if(length<n)
     {return;}
     curr = head;
@@ -52,10 +54,31 @@ void NthFromEndNaive(Node *head, int n){
     while(i!=length-n+1){
         curr = curr->next;
         i++;
+        cout<<" I:"<<i;
     }
     cout<<endl;
     cout<<curr->data;
-    
+}
+
+//  Efficient solution
+void NthFromEnd(Node *head, int n){
+    if(head==NULL){
+        return;
+    }
+    Node *first = head;
+    Node *second = head;
+    for(int i=0;i<n;i++){
+        if(first->next==NULL){
+            return;
+        }
+        first = first->next;
+    }
+    while(first!=NULL){
+        first = first->next;
+        second = second->next;
+    }
+    cout<<endl;
+    cout<<second->data;
 }
 
 int main()
@@ -67,7 +90,7 @@ int main()
     head = insertAtPosition(head,45,2);
     head = insertAtPosition(head,50,1);
     printList(head);
-    // middleNode(head);
+    NthFromEnd(head,2);
     NthFromEndNaive(head,3);
    return 0;
-}}
+}
