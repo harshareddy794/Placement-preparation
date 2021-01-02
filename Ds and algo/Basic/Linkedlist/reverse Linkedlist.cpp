@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -37,6 +38,20 @@ Node *insertAtPosition(Node *head, int x,int position){
         return head;
     }
 }
+// Naive and using vectors
+Node *revLinkedListNaive(Node *head){
+    vector<int> arr;
+    Node *curr =head;
+    while(curr->next!=NULL){
+    arr.push_back(curr->data);
+    curr = curr->next;
+    }
+    for(curr=head;curr->next!=NULL;curr=curr->next){
+        curr->data = arr.back();
+        arr.pop_back();
+    }
+    return head;
+}
 
 //  Efficient solution
 Node *revLinkedList(Node *head){
@@ -65,6 +80,8 @@ int main()
     head = insertAtPosition(head,50,1);
     printList(head);
     head = revLinkedList(head);
+    printList(head);
+    head= revLinkedListNaive(head);
     printList(head);
     return 0;
 }
