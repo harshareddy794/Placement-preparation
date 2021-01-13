@@ -27,6 +27,7 @@ Node *insertBegin(Node *head,int x){
     Node *temp = new Node(x);
     if(head==NULL){
         head = temp;
+        temp->next = temp;
         return head;
     }else{
         Node *curr = head;
@@ -41,14 +42,11 @@ Node *insertBegin(Node *head,int x){
 }
 
 int main()
-{
-    Node *head = new Node(5);
-    Node *head1 = new Node(10);
-    Node *head2 = new Node(15);
-    head->next = head1;
-    head1->next = head2;
-    head2->next = head;
-    printList(head);
-    head = insertBegin(head,2);
+{   
+    Node *head = insertBegin(head,2);
+    head = insertBegin(head,5);
+    head = insertBegin(head,10);
+    head = insertBegin(head,12);
+    head = insertBegin(head,15);
     printList(head);
 }
