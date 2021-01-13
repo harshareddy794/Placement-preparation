@@ -23,6 +23,7 @@ void printList(Node *head){
     cout<<endl;
 }
 
+// Naive Solution
 Node *insertBegin(Node *head,int x){
     Node *temp = new Node(x);
     if(head==NULL){
@@ -41,6 +42,23 @@ Node *insertBegin(Node *head,int x){
     }
 }
 
+// Efficient solution 
+Node *insertBeginEffective(Node *head,int x){
+    Node *temp = new Node(x);
+    if(head==NULL){
+        head = temp;
+        temp->next = temp;
+        return head;
+    }else{
+        temp->next = head->next;
+        head->next = temp;
+        int t = head->data;
+        head->data = temp->data;
+        temp->data = t;
+        return head;
+    }
+}
+
 int main()
 {   
     Node *head = insertBegin(head,2);
@@ -48,5 +66,7 @@ int main()
     head = insertBegin(head,10);
     head = insertBegin(head,12);
     head = insertBegin(head,15);
+    printList(head);
+    head = insertBeginEffective(head,20);
     printList(head);
 }
