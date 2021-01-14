@@ -27,9 +27,8 @@ void printList(Node *head){
 Node *insertEnd(Node *head,int x){
     Node *temp = new Node(x);
     if(head==NULL){
-        head = temp;
         temp->next = temp;
-        return head;
+        return temp;
     }else{
         Node *curr = head;
         while(curr->next!=head){
@@ -42,21 +41,20 @@ Node *insertEnd(Node *head,int x){
 }
 
 // Efficient solution 
-// Node *insertBeginEffective(Node *head,int x){
-//     Node *temp = new Node(x);
-//     if(head==NULL){
-//         head = temp;
-//         temp->next = temp;
-//         return head;
-//     }else{
-//         temp->next = head->next;
-//         head->next = temp;
-//         int t = head->data;
-//         head->data = temp->data;
-//         temp->data = t;
-//         return head;
-//     }
-// }
+Node *insertEndEffective(Node *head,int x){
+    Node *temp = new Node(x);
+    if(head==NULL){
+        temp->next = temp;
+        return temp;
+    }else{
+        temp->next = head->next;
+        head->next = temp;
+        int t = temp->data;
+        temp->data = head->data;
+        head->data = t;
+        return temp;
+    }
+}
 
 int main()
 {   
@@ -66,6 +64,6 @@ int main()
     head = insertEnd(head,12);
     head = insertEnd(head,15);
     printList(head);
-    // head = insertBeginEffective(head,20);
-    // printList(head);
+    head = insertEndEffective(head,20);
+    printList(head);
 }
