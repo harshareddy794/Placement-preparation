@@ -57,7 +57,20 @@ Node *deleteHead(Node *head){
 }
 
 // Efficient solution 
-
+Node *deleteHeadEfficient(Node *head){
+    if(head==NULL){
+        return NULL;
+    }else if(head->next==head){
+        delete(head);
+        return NULL;
+    }else{
+        head->data = head->next->data;
+        Node *temp = head->next;
+        head->next = head->next->next;
+        delete(temp);
+        return head;
+    }
+}
 
 int main()
 {   
