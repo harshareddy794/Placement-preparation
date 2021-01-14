@@ -41,7 +41,7 @@ Node *insertEnd(Node *head,int x){
 }
 
 // Efficient solution 
-Node *insertEndEffective(Node *head,int x){
+Node *insertEndEfficient(Node *head,int x){
     Node *temp = new Node(x);
     if(head==NULL){
         temp->next = temp;
@@ -64,6 +64,6 @@ int main()
     head = insertEnd(head,12);
     head = insertEnd(head,15);
     printList(head);
-    head = insertEndEffective(head,20);
+    head = insertEndEfficient(head,20);
     printList(head);
 }
