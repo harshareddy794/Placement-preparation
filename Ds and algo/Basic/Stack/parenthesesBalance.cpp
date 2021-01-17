@@ -16,6 +16,9 @@ bool isBalanced(string s){
     for(int i=0;i<s.length();i++){
         if(s[i]=='(' || s[i]=='{' || s[i]=='['){
             a.push(s[i]);
+        }
+        else if(s[i]==' '){
+            continue;
         }else{
             if(a.empty()==true){
                 return false;
